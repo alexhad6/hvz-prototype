@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart' show WidgetsFlutterBinding;
 import 'package:firebase_core/firebase_core.dart';
+import 'package:hvz_prototype/server/database.dart';
 
 class Server {
   // Prevents this class from being instantiated.
@@ -11,5 +12,6 @@ class Server {
     WidgetsFlutterBinding.ensureInitialized();
 
     await Firebase.initializeApp();
+    await Database.initialize();
   }
 }
