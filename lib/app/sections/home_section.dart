@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
+import 'package:hvz_prototype/server/auth.dart';
 import 'package:hvz_prototype/app/variables.dart' show Icons;
 import 'package:hvz_prototype/app/components/section.dart';
+import 'package:hvz_prototype/app/components/button.dart';
 
 class HomeSection extends Section {
   const HomeSection({Key? key})
@@ -19,10 +21,16 @@ class _HomeSectionContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const <Widget>[
+      children: <Widget>[
         Text('Home section'),
         SizedBox(height: 50),
-        Text('This section will show important information'),
+        Button(
+          text: 'Sign In',
+          onTap: () => Auth.createUser(
+            email: 'web@web.com',
+            password: 'password123',
+          ),
+        ),
       ],
     );
   }
